@@ -19,7 +19,7 @@ const Login = () => {
           <h1>Criar Conta</h1>
           <div className="social-icons">
             <a href="#" className="icon">
-              <i className="fa-brands fa-google-plus-g"></i>
+              <i className="fa-brands fa-google"></i>
             </a>
           </div>
           <span>ou use seu e-mail para se registrar</span>
