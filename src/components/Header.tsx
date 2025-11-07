@@ -1,13 +1,16 @@
 import "./Header.css";
 import logo from "../assets/logo1.png";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <nav className="navbar">
       <div className="nav-content">
-        <Link to="/" className="logo">
-        <img src={logo} alt="Logo Ryan Gomes" />
+        <Link to="/home" className="logo">
+          <img src={logo} alt="Logo Ryan Gomes" />
         </Link>
         <ul>
           <li><Link to="/home">Home</Link></li>
@@ -16,7 +19,11 @@ const Header = () => {
           <li><Link to="/contato">Contatos</Link></li>
         </ul>
         <div>
-          <Link to="/login">Área do Cliente</Link>
+          {isLoggedIn ? (
+            <Link to="/galeria/123">Minha Galeria</Link>
+          ) : (
+            <Link to="/login">Área do Cliente</Link>
+          )}
         </div>
       </div>
     </nav>
