@@ -1,33 +1,27 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./Login.css";
-import Footer from "../components/Footer";
-import { useAuth } from "../context/AuthContext";
+import styles from "./Login.module.css";
+import Footer from "../../components/Footer";
+import { useAuth } from "../../context/AuthContext";
 
 const Login = () => {
   const [isActive, setIsActive] = useState(false);
 
-  const handleRegisterClick = () => {
-    setIsActive(true);
-  };
-
-  const handleLoginClick = () => {
-    setIsActive(false);
-  };
+  const handleRegisterClick = () => setIsActive(true);
+  const handleLoginClick = () => setIsActive(false);
 
   const navigation = useNavigate();
-
   const { login } = useAuth();
 
   return (
     <>
-      <div className={`container ${isActive ? "active" : ""}`} id="container">
-        <div className="form-container sign-up">
+      <div className={`${styles.container} ${isActive ? styles.active : ""}`} id="container">
+        <div className={`${styles["form-container"]} ${styles["sign-up"]}`}>
           <form>
             <h1>Criar Conta</h1>
-            <div className="social-icons">
-              <a href="#" className="icon">
+            <div className={styles["social-icons"]}>
+              <a href="#" className={styles.icon}>
                 <i className="fa-brands fa-google"></i>
               </a>
             </div>
@@ -40,11 +34,11 @@ const Login = () => {
           </form>
         </div>
 
-        <div className="form-container sign-in">
+        <div className={`${styles["form-container"]} ${styles["sign-in"]}`}>
           <form>
             <h1>Entrar</h1>
-            <div className="social-icons">
-              <a href="#" className="icon">
+            <div className={styles["social-icons"]}>
+              <a href="#" className={styles.icon}>
                 <i className="fa-brands fa-google"></i>
               </a>
             </div>
@@ -58,26 +52,26 @@ const Login = () => {
           </form>
         </div>
 
-        <div className="toggle-container">
-          <div className="toggle">
-            <div className="toggle-panel toggle-left">
+        <div className={styles["toggle-container"]}>
+          <div className={styles.toggle}>
+            <div className={`${styles["toggle-panel"]} ${styles["toggle-left"]}`}>
               <h1>Já tem sua conta?</h1>
               <p>Use seu e-mail cadastrado para acessar todos os recursos do site</p>
-              <button className="hidden" onClick={handleLoginClick}>
+              <button className={styles.hidden} onClick={handleLoginClick}>
                 Entrar
               </button>
             </div>
-            <div className="toggle-panel toggle-right">
+            <div className={`${styles["toggle-panel"]} ${styles["toggle-right"]}`}>
               <h1>Novo por aqui?</h1>
               <p>Cadastre-se com seus dados pessoais para aproveitar todos os recursos do site</p>
-              <button className="hidden" onClick={handleRegisterClick}>
+              <button className={styles.hidden} onClick={handleRegisterClick}>
                 Cadastre-se
               </button>
             </div>
           </div>
         </div>
       </div>
-      < Footer />
+      <Footer />
     </>
   );
 };
