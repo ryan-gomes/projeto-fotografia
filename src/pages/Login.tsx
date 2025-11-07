@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState} from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
@@ -12,6 +14,8 @@ const Login = () => {
     setIsActive(false);
   };
 
+  const navigation = useNavigate();
+
   return (
     <div className={`container ${isActive ? "active" : ""}`} id="container">
       <div className="form-container sign-up">
@@ -24,6 +28,7 @@ const Login = () => {
           </div>
           <span>ou use seu e-mail para se registrar</span>
           <input type="text" placeholder="Nome" />
+          <input type="text" placeholder="CPF"/>
           <input type="email" placeholder="E-mail" />
           <input type="password" placeholder="Senha" />
           <button type="button">Cadastrar</button>
@@ -41,8 +46,8 @@ const Login = () => {
           <span>ou use seu e-mail e senha</span>
           <input type="email" placeholder="E-mail" />
           <input type="password" placeholder="Senha" />
-          <a href="#">Esqueceu sua senha?</a>
-          <button type="button">Entrar</button>
+          <Link to="/forgot-password">Esqueceu sua senha?</Link>
+          <button onClick={() => navigation('/home')}type="button">Entrar</button>
         </form>
       </div>
 
