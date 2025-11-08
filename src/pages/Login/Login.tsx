@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer/Footer";
 import { useAuth } from "../../context/AuthContext";
 
 const Login = () => {

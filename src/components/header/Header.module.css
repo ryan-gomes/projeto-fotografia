@@ -1,0 +1,72 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+  z-index: 1000;
+  background: transparent;
+}
+
+.scrolled {
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navContent {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.scrolled .navLinks li a {
+  color: #222;
+}
+
+.navLinks li a:hover {
+  color: #a19b83;
+}
+
+.clientArea a {
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #a19b83, #745846);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.clientArea a:hover {
+  opacity: 0.9;
+}
